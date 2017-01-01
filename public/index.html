@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="vis-styles.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <script src="libs/d3/d3.min.js" type="application/javascript"></script>
+    <script src="libs/jquery/dist/jquery.min.js" type="application/javascript"></script>
+    <script src="libs/angular/angular.min.js" type="application/javascript"></script>
+    <script src="charting.js" type="application/javascript"></script>
+</head>
+<body>
+    <div class="container-fluid title-banner">
+        <h1 class="text-center">Twitter Timemaps</h1>
+        <h3 class="text-center">Visualising events across multiple timescales</h3>
+    </div>
+    <div class="container content-container">
+        <div class="row">
+            <p>After seeing <a href="https://districtdatalabs.silvrback.com/time-maps-visualizing-discrete-events-across-many-timescales">this</a>
+            excellent blog post by Max Watson about 'timemaps', where you essentially plot a heatmap of time before and after events,
+                I was inspired to create one of my own, based on twitter data. Paste the handler you want in the box below to see
+                the map for another user!
+
+            </p>
+
+            <p>This is still a work in progress and the twitter api does take time to respond so apologies if it is not as slick as it should be ;)</p>
+        </div>
+        <div class="row">
+            <h3 id="twitterHandle">@WhiteHouse</h3>
+            <div class="col-sm-8" id="heatmap"></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="input-group" id="newNameInput">
+                    <input type="text" class="form-control" placeholder="twitter handle" id="newScreenName">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="button" id="getDataBtn">Draw!</button>
+                    </span>
+                </div>
+                <div class="loader-container custom-hidden">
+                    <div class="loader">Loading twitter data...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

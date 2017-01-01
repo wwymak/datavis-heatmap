@@ -1,0 +1,88 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+.title-banner {
+    background-color: slategrey;
+    color: #ffffff;
+    font-weight: bold;
+    min-height: 30vh;
+    margin: 0;
+    padding: 0;
+}
+.axis path,
+.axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+.axis path{
+    stroke-width: 1.5;
+}
+
+.label {
+    font-size: 1.2rem;
+}
+
+.custom-hidden {
+    display: none;
+}
+
+.content-container {
+    padding: 20px;
+}
+
+.loader-container{
+    position: relative;
+    min-height: 50px;
+}
+/*http://codepen.io/majci23/pen/NqdXvy*/
+.loader {
+    width: 330px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: helvetica, arial, sans-serif;
+    text-transform: uppercase;
+    font-weight: 900;
+    color: #ce4233;
+    letter-spacing: 0.2em;
+}
+
+.loader::before, .loader::after {
+    content: "";
+    display: block;
+    width: 15px;
+    height: 15px;
+    background: #ce4233;
+    position: absolute;
+    animation: load 0.7s infinite alternate ease-in-out;
+}
+
+.loader::before {
+    top: 0;
+}
+
+.loader::after {
+    bottom: 0;
+}
+
+@keyframes load {
+    0% {
+        left: 0;
+        height: 30px;
+        width: 15px;
+    }
+    50% {
+        height: 8px;
+        width: 40px;
+    }
+    100% {
+        left: 305px;
+        height: 30px;
+        width: 15px;
+    }
+}
